@@ -1,0 +1,1359 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "for,goodby,now": {
+            "intent": "bye",
+            "domain": "default"
+          },
+          "%name%,is,my,name": {
+            "intent": "welcome",
+            "domain": "default"
+          },
+          "%name%": {
+            "intent": "welcome",
+            "domain": "default"
+          },
+          "%service%": {
+            "intent": "service",
+            "domain": "default"
+          },
+          "%property%": {
+            "intent": "property",
+            "domain": "default"
+          },
+          "%bedroom%": {
+            "intent": "bedroom",
+            "domain": "default"
+          },
+          "%bathroom%": {
+            "intent": "bathroom",
+            "domain": "default"
+          },
+          "%parking_space%": {
+            "intent": "parking_space",
+            "domain": "default"
+          },
+          "%furnish%": {
+            "intent": "furnish",
+            "domain": "default"
+          },
+          "%budget%": {
+            "intent": "budget",
+            "domain": "default"
+          },
+          "%state%": {
+            "intent": "state",
+            "domain": "default"
+          },
+          "%suburb%": {
+            "intent": "suburb",
+            "domain": "default"
+          },
+          "%email%,email,is,my": {
+            "intent": "email",
+            "domain": "default"
+          },
+          "%phone%": {
+            "intent": "phone",
+            "domain": "default"
+          },
+          "%yes_confirm%": {
+            "intent": "yes_confirm",
+            "domain": "default"
+          },
+          "%no_confirm%": {
+            "intent": "no_confirm",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "bye": "default",
+          "welcome": "default",
+          "service": "default",
+          "property": "default",
+          "bedroom": "default",
+          "bathroom": "default",
+          "parking_space": "default",
+          "furnish": "default",
+          "budget": "default",
+          "state": "default",
+          "suburb": "default",
+          "email": "default",
+          "phone": "default",
+          "yes_confirm": "default",
+          "no_confirm": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "My name is %name%",
+            "intent": "welcome"
+          },
+          {
+            "domain": "default",
+            "utterance": "%name%",
+            "intent": "welcome"
+          },
+          {
+            "domain": "default",
+            "utterance": "%service%",
+            "intent": "service"
+          },
+          {
+            "domain": "default",
+            "utterance": "%property%",
+            "intent": "property"
+          },
+          {
+            "domain": "default",
+            "utterance": "%bedroom%",
+            "intent": "bedroom"
+          },
+          {
+            "domain": "default",
+            "utterance": "%bathroom%",
+            "intent": "bathroom"
+          },
+          {
+            "domain": "default",
+            "utterance": "%parking_space%",
+            "intent": "parking_space"
+          },
+          {
+            "domain": "default",
+            "utterance": "%furnish%",
+            "intent": "furnish"
+          },
+          {
+            "domain": "default",
+            "utterance": "%budget%",
+            "intent": "budget"
+          },
+          {
+            "domain": "default",
+            "utterance": "%state%",
+            "intent": "state"
+          },
+          {
+            "domain": "default",
+            "utterance": "%suburb%",
+            "intent": "suburb"
+          },
+          {
+            "domain": "default",
+            "utterance": "My email is %email%",
+            "intent": "email"
+          },
+          {
+            "domain": "default",
+            "utterance": "%phone%",
+            "intent": "phone"
+          },
+          {
+            "domain": "default",
+            "utterance": "%yes_confirm%",
+            "intent": "yes_confirm"
+          },
+          {
+            "domain": "default",
+            "utterance": "%no_confirm%",
+            "intent": "no_confirm"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "for": 1,
+              "now": 1,
+              "my": 1,
+              "name": 1,
+              "is": 1,
+              "%name%": 1,
+              "%service%": 1,
+              "%property%": 1,
+              "%bedroom%": 1,
+              "%bathroom%": 1,
+              "%parking_space%": 1,
+              "%furnish%": 1,
+              "%budget%": 1,
+              "%state%": 1,
+              "%suburb%": 1,
+              "email": 1,
+              "%email%": 1,
+              "%phone%": 1,
+              "%yes_confirm%": 1,
+              "%no_confirm%": 1
+            },
+            "intents": {
+              "bye": 1,
+              "welcome": 1,
+              "service": 1,
+              "property": 1,
+              "bedroom": 1,
+              "bathroom": 1,
+              "parking_space": 1,
+              "furnish": 1,
+              "budget": 1,
+              "state": 1,
+              "suburb": 1,
+              "email": 1,
+              "phone": 1,
+              "yes_confirm": 1,
+              "no_confirm": 1
+            },
+            "intentFeatures": {
+              "bye": {
+                "goodby": 1,
+                "for": 1,
+                "now": 1
+              },
+              "welcome": {
+                "my": 1,
+                "name": 1,
+                "is": 1,
+                "%name%": 1
+              },
+              "service": {
+                "%service%": 1
+              },
+              "property": {
+                "%property%": 1
+              },
+              "bedroom": {
+                "%bedroom%": 1
+              },
+              "bathroom": {
+                "%bathroom%": 1
+              },
+              "parking_space": {
+                "%parking_space%": 1
+              },
+              "furnish": {
+                "%furnish%": 1
+              },
+              "budget": {
+                "%budget%": 1
+              },
+              "state": {
+                "%state%": 1
+              },
+              "suburb": {
+                "%suburb%": 1
+              },
+              "email": {
+                "my": 1,
+                "email": 1,
+                "is": 1,
+                "%email%": 1
+              },
+              "phone": {
+                "%phone%": 1
+              },
+              "yes_confirm": {
+                "%yes_confirm%": 1
+              },
+              "no_confirm": {
+                "%no_confirm%": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "bye"
+              ],
+              "for": [
+                "bye"
+              ],
+              "now": [
+                "bye"
+              ],
+              "my": [
+                "welcome",
+                "email"
+              ],
+              "name": [
+                "welcome"
+              ],
+              "is": [
+                "welcome",
+                "email"
+              ],
+              "%name%": [
+                "welcome"
+              ],
+              "%service%": [
+                "service"
+              ],
+              "%property%": [
+                "property"
+              ],
+              "%bedroom%": [
+                "bedroom"
+              ],
+              "%bathroom%": [
+                "bathroom"
+              ],
+              "%parking_space%": [
+                "parking_space"
+              ],
+              "%furnish%": [
+                "furnish"
+              ],
+              "%budget%": [
+                "budget"
+              ],
+              "%state%": [
+                "state"
+              ],
+              "%suburb%": [
+                "suburb"
+              ],
+              "email": [
+                "email"
+              ],
+              "%email%": [
+                "email"
+              ],
+              "%phone%": [
+                "phone"
+              ],
+              "%yes_confirm%": [
+                "yes_confirm"
+              ],
+              "%no_confirm%": [
+                "no_confirm"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "for",
+                "now",
+                "my",
+                "name",
+                "is",
+                "%name%",
+                "%service%",
+                "%property%",
+                "%bedroom%",
+                "%bathroom%",
+                "%parking_space%",
+                "%furnish%",
+                "%budget%",
+                "%state%",
+                "%suburb%",
+                "email",
+                "%email%",
+                "%phone%",
+                "%yes_confirm%",
+                "%no_confirm%"
+              ],
+              "intents": [
+                "bye",
+                "welcome",
+                "service",
+                "property",
+                "bedroom",
+                "bathroom",
+                "parking_space",
+                "furnish",
+                "budget",
+                "state",
+                "suburb",
+                "email",
+                "phone",
+                "yes_confirm",
+                "no_confirm"
+              ],
+              "perceptrons": [
+                [
+                  4.6715006828308105,
+                  4.6715006828308105,
+                  4.6715006828308105,
+                  -0.20821772515773773,
+                  -0.12240195274353027,
+                  -0.20821772515773773,
+                  -0.40525031089782715,
+                  -0.33594584465026855,
+                  -0.32643821835517883,
+                  -0.32178351283073425,
+                  -0.31331273913383484,
+                  -0.30795788764953613,
+                  -0.3004246652126312,
+                  -0.2951425015926361,
+                  -0.2884279489517212,
+                  -0.2836171090602875,
+                  -0.06385794281959534,
+                  -0.06385794281959534,
+                  -0.2777881324291229,
+                  -0.2741084098815918,
+                  -0.27119696140289307,
+                  0.27121717200920487
+                ],
+                [
+                  -0.26502725481987,
+                  -0.26502725481987,
+                  -0.26502725481987,
+                  -0.2589147686958313,
+                  1.3413169384002686,
+                  -0.2589147686958313,
+                  12.854384422302246,
+                  -0.8005545139312744,
+                  -0.7976928353309631,
+                  -0.7946909070014954,
+                  -0.7915512323379517,
+                  -0.7882756590843201,
+                  -0.7848669290542603,
+                  -0.7813274264335632,
+                  -0.7776598930358887,
+                  -0.7738668918609619,
+                  -1.5406312942504883,
+                  -1.5406312942504883,
+                  -0.7670000791549683,
+                  -0.7626466155052185,
+                  -0.758178174495697,
+                  0.8027040981120165
+                ],
+                [
+                  -0.303213894367218,
+                  -0.303213894367218,
+                  -0.303213894367218,
+                  -0.2697356641292572,
+                  -0.07366220653057098,
+                  -0.2697356641292572,
+                  -0.8644760251045227,
+                  13.046539306640625,
+                  -0.9178577065467834,
+                  -0.9142390489578247,
+                  -0.9104250073432922,
+                  -0.9064202308654785,
+                  -0.9022297859191895,
+                  -0.8978586196899414,
+                  -0.8933119177818298,
+                  -0.8885945677757263,
+                  -0.18905475735664368,
+                  -0.18905475735664368,
+                  -0.8833106756210327,
+                  -0.8782318234443665,
+                  -0.8729981184005737,
+                  0.9128648000914247
+                ],
+                [
+                  -0.304121732711792,
+                  -0.304121732711792,
+                  -0.304121732711792,
+                  -0.27162471413612366,
+                  -0.07645021378993988,
+                  -0.27162471413612366,
+                  -0.8704048991203308,
+                  -0.8624899387359619,
+                  13.046460151672363,
+                  -0.9179351329803467,
+                  -0.914315402507782,
+                  -0.9105001091957092,
+                  -0.9064943194389343,
+                  -0.9023026823997498,
+                  -0.897930383682251,
+                  -0.8933824300765991,
+                  -0.18803538382053375,
+                  -0.18803538382053375,
+                  -0.8883087635040283,
+                  -0.8833889961242676,
+                  -0.8783091902732849,
+                  0.9148014032183255
+                ],
+                [
+                  -0.3049246370792389,
+                  -0.3049246370792389,
+                  -0.3049246370792389,
+                  -0.27425670623779297,
+                  -0.07934211194515228,
+                  -0.27425670623779297,
+                  -0.8760767579078674,
+                  -0.868238091468811,
+                  -0.862457275390625,
+                  13.046492576599121,
+                  -0.9179022908210754,
+                  -0.9142824411392212,
+                  -0.9104671478271484,
+                  -0.9064611792564392,
+                  -0.9022695422172546,
+                  -0.8978973627090454,
+                  -0.1874249279499054,
+                  -0.1874249279499054,
+                  -0.8930245041847229,
+                  -0.8882699608802795,
+                  -0.8833502531051636,
+                  0.9164524121921954
+                ],
+                [
+                  -0.30554860830307007,
+                  -0.30554860830307007,
+                  -0.30554860830307007,
+                  -0.280518501996994,
+                  -0.07496929168701172,
+                  -0.280518501996994,
+                  -0.8814246654510498,
+                  -0.8735072612762451,
+                  -0.867874801158905,
+                  -0.8620954751968384,
+                  13.046854972839355,
+                  -0.9175436496734619,
+                  -0.9139255881309509,
+                  -0.9101121425628662,
+                  -0.9061080813407898,
+                  -0.9019184112548828,
+                  -0.19029414653778076,
+                  -0.19029414653778076,
+                  -0.8972165584564209,
+                  -0.8926336169242859,
+                  -0.8878805041313171,
+                  0.9176106256441783
+                ],
+                [
+                  -0.30612418055534363,
+                  -0.30612418055534363,
+                  -0.30612418055534363,
+                  -0.2893458604812622,
+                  -0.0779682844877243,
+                  -0.2893458604812622,
+                  -0.8865197896957397,
+                  -0.8786715865135193,
+                  -0.87319415807724,
+                  -0.86756432056427,
+                  -0.8617876172065735,
+                  13.047160148620605,
+                  -0.9172413349151611,
+                  -0.9136260151863098,
+                  -0.9098153710365295,
+                  -0.9058142900466919,
+                  -0.19561134278774261,
+                  -0.19561134278774261,
+                  -0.9012900590896606,
+                  -0.8968850374221802,
+                  -0.8923044800758362,
+                  0.9186606014321512
+                ],
+                [
+                  -0.3070865273475647,
+                  -0.3070865273475647,
+                  -0.3070865273475647,
+                  -0.2958979606628418,
+                  -0.08108656108379364,
+                  -0.2958979606628418,
+                  -0.8912681937217712,
+                  -0.8834929466247559,
+                  -0.8781783580780029,
+                  -0.8727053999900818,
+                  -0.86708003282547,
+                  -0.8613079190254211,
+                  13.047633171081543,
+                  -0.9167709946632385,
+                  -0.9131603240966797,
+                  -0.909354567527771,
+                  -0.1980448067188263,
+                  -0.1980448067188263,
+                  -0.9050132632255554,
+                  -0.9007927775382996,
+                  -0.8963918089866638,
+                  0.9193666088051591
+                ],
+                [
+                  -0.3125598132610321,
+                  -0.3125598132610321,
+                  -0.3125598132610321,
+                  -0.3058055341243744,
+                  -0.08432884514331818,
+                  -0.3058055341243744,
+                  -0.8955686092376709,
+                  -0.8878719210624695,
+                  -0.8827289938926697,
+                  -0.8774219155311584,
+                  -0.8719568848609924,
+                  -0.8663392663002014,
+                  -0.8605751991271973,
+                  13.048357963562012,
+                  -0.916054368019104,
+                  -0.9124520421028137,
+                  -0.20414651930332184,
+                  -0.20414651930332184,
+                  -0.9083016514778137,
+                  -0.9042739272117615,
+                  -0.9000610709190369,
+                  0.9196445687604302
+                ],
+                [
+                  -0.3181713819503784,
+                  -0.3181713819503784,
+                  -0.3181713819503784,
+                  -0.3160277009010315,
+                  -0.0877000242471695,
+                  -0.3160277009010315,
+                  -0.8996260762214661,
+                  -0.8920103311538696,
+                  -0.8870449662208557,
+                  -0.8819098472595215,
+                  -0.8766109943389893,
+                  -0.8711541295051575,
+                  -0.8655449748039246,
+                  -0.8597891926765442,
+                  13.0491361618042,
+                  -0.9152856469154358,
+                  -0.21041634678840637,
+                  -0.21041634678840637,
+                  -0.911331295967102,
+                  -0.9075018167495728,
+                  -0.9034820795059204,
+                  0.9197039837364789
+                ],
+                [
+                  -0.32330501079559326,
+                  -0.32330501079559326,
+                  -0.32330501079559326,
+                  -0.3222256898880005,
+                  -0.0912051871418953,
+                  -0.3222256898880005,
+                  -0.9034269452095032,
+                  -0.8958941102027893,
+                  -0.891112208366394,
+                  -0.8861550092697144,
+                  -0.8810283541679382,
+                  -0.8757380843162537,
+                  -0.8702899217605591,
+                  -0.8646894693374634,
+                  -0.8589428067207336,
+                  13.049972534179688,
+                  -0.21143493056297302,
+                  -0.21143493056297302,
+                  -0.9140874743461609,
+                  -0.9104611873626709,
+                  -0.9066399931907654,
+                  0.9195375495286572
+                ],
+                [
+                  -0.13499487936496735,
+                  -0.13499487936496735,
+                  -0.13499487936496735,
+                  2.3452308177948,
+                  -2.386868953704834,
+                  2.3452308177948,
+                  -2.434523820877075,
+                  -0.14005792140960693,
+                  -0.13746921718120575,
+                  -0.13585327565670013,
+                  -0.13416749238967896,
+                  -0.13287827372550964,
+                  -0.13191774487495422,
+                  -0.13125278055667877,
+                  -0.130904883146286,
+                  -0.13059386610984802,
+                  4.7320990562438965,
+                  4.7320990562438965,
+                  -0.22114624083042145,
+                  -0.21380507946014404,
+                  -0.21275454759597778,
+                  0.13097213473710423
+                ],
+                [
+                  -0.3343467116355896,
+                  -0.3343467116355896,
+                  -0.3343467116355896,
+                  -0.30955347418785095,
+                  -0.14629396796226501,
+                  -0.30955347418785095,
+                  -0.9140016436576843,
+                  -0.9050067067146301,
+                  -0.9004140496253967,
+                  -0.8956393599510193,
+                  -0.890688419342041,
+                  -0.8855668902397156,
+                  -0.8802805542945862,
+                  -0.874835193157196,
+                  -0.8692366480827332,
+                  -0.8634905815124512,
+                  -0.1448313146829605,
+                  -0.1448313146829605,
+                  13.04596996307373,
+                  -0.9184318780899048,
+                  -0.9148181080818176,
+                  0.9244166990621211
+                ],
+                [
+                  -0.3394261598587036,
+                  -0.3394261598587036,
+                  -0.3394261598587036,
+                  -0.3131284713745117,
+                  -0.15189488232135773,
+                  -0.3131284713745117,
+                  -0.917968213558197,
+                  -0.9090096950531006,
+                  -0.9046074748039246,
+                  -0.9000176191329956,
+                  -0.8952457904815674,
+                  -0.8902977108955383,
+                  -0.8851791620254517,
+                  -0.8798959851264954,
+                  -0.8744539022445679,
+                  -0.8688585758209229,
+                  -0.14235250651836395,
+                  -0.14235250651836395,
+                  -0.8626227378845215,
+                  13.046319007873535,
+                  -0.9180881381034851,
+                  0.9244890678398532
+                ],
+                [
+                  -0.34922945499420166,
+                  -0.34922945499420166,
+                  -0.34922945499420166,
+                  -0.3167588710784912,
+                  -0.15770751237869263,
+                  -0.3167588710784912,
+                  -0.921704888343811,
+                  -0.9127832651138306,
+                  -0.9085770845413208,
+                  -0.904177725315094,
+                  -0.8995907306671143,
+                  -0.8948219418525696,
+                  -0.8898770213127136,
+                  -0.8847617506980896,
+                  -0.8794819116592407,
+                  -0.8740432262420654,
+                  -0.1397116780281067,
+                  -0.1397116780281067,
+                  -0.8680098056793213,
+                  -0.8622434735298157,
+                  13.046692848205566,
+                  0.9243817036821376
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "My name is %name%"
+      ],
+      [
+        "en",
+        "%name%"
+      ],
+      [
+        "en",
+        "%service%"
+      ],
+      [
+        "en",
+        "%property%"
+      ],
+      [
+        "en",
+        "%bedroom%"
+      ],
+      [
+        "en",
+        "%bathroom%"
+      ],
+      [
+        "en",
+        "%parking_space%"
+      ],
+      [
+        "en",
+        "%furnish%"
+      ],
+      [
+        "en",
+        "%budget%"
+      ],
+      [
+        "en",
+        "%state%"
+      ],
+      [
+        "en",
+        "%suburb%"
+      ],
+      [
+        "en",
+        "My email is %email%"
+      ],
+      [
+        "en",
+        "%phone%"
+      ],
+      [
+        "en",
+        "%yes_confirm%"
+      ],
+      [
+        "en",
+        "%no_confirm%"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {
+      "en": {
+        "name": {
+          "name": "name",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "Minh",
+              "texts": [
+                "minh",
+                "Minh"
+              ]
+            },
+            {
+              "option": "Mohsin",
+              "texts": [
+                "mohsin",
+                "Mohsin"
+              ]
+            },
+            {
+              "option": "Alan",
+              "texts": [
+                "alan",
+                "Alan"
+              ]
+            }
+          ]
+        },
+        "service": {
+          "name": "service",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "Rent",
+              "texts": [
+                "renting",
+                "Renting",
+                "rent",
+                "Rent"
+              ]
+            },
+            {
+              "option": "Buy",
+              "texts": [
+                "buying",
+                "Buying",
+                "buy",
+                "Buy"
+              ]
+            },
+            {
+              "option": "Sell",
+              "texts": [
+                "selling",
+                "Selling",
+                "sell",
+                "Sell"
+              ]
+            }
+          ]
+        },
+        "property": {
+          "name": "property",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "apartment",
+              "texts": [
+                "apartment",
+                "Apartment"
+              ]
+            },
+            {
+              "option": "townhouse",
+              "texts": [
+                "townhouse",
+                "Townhouse"
+              ]
+            },
+            {
+              "option": "house",
+              "texts": [
+                "house",
+                "House"
+              ]
+            },
+            {
+              "option": "unit",
+              "texts": [
+                "unit",
+                "Unit"
+              ]
+            }
+          ]
+        },
+        "bedroom": {
+          "name": "bedroom",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "1 bedroom",
+              "texts": [
+                "1 bedroom"
+              ]
+            },
+            {
+              "option": "2 bedrooms",
+              "texts": [
+                "2 bedrooms"
+              ]
+            },
+            {
+              "option": "3 bedrooms",
+              "texts": [
+                "3 bedrooms"
+              ]
+            }
+          ]
+        },
+        "bathroom": {
+          "name": "bathroom",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "1 bathroom",
+              "texts": [
+                "1 bathroom"
+              ]
+            },
+            {
+              "option": "2 bathrooms",
+              "texts": [
+                "2 bathrooms"
+              ]
+            },
+            {
+              "option": "3 bathrooms",
+              "texts": [
+                "3 bathrooms"
+              ]
+            }
+          ]
+        },
+        "parking_space": {
+          "name": "parking_space",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "1 parking space",
+              "texts": [
+                "1 parking space"
+              ]
+            },
+            {
+              "option": "2 parking spaces",
+              "texts": [
+                "2 parking spaces"
+              ]
+            },
+            {
+              "option": "3 parking spaces",
+              "texts": [
+                "3 parking spaces"
+              ]
+            }
+          ]
+        },
+        "furnish": {
+          "name": "furnish",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "furnished",
+              "texts": [
+                "furnished",
+                "Furnished"
+              ]
+            },
+            {
+              "option": "unfurnished",
+              "texts": [
+                "unfurnished",
+                "Unfurnished"
+              ]
+            }
+          ]
+        },
+        "budget": {
+          "name": "budget",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "100",
+              "texts": [
+                "100"
+              ]
+            },
+            {
+              "option": "200",
+              "texts": [
+                "200"
+              ]
+            },
+            {
+              "option": "300",
+              "texts": [
+                "300"
+              ]
+            }
+          ]
+        },
+        "state": {
+          "name": "state",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "NSW",
+              "texts": [
+                "nsw",
+                "NSW",
+                "New South Wales",
+                "new south wales"
+              ]
+            }
+          ]
+        },
+        "suburb": {
+          "name": "suburb",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "Ashfield",
+              "texts": [
+                "ashfield",
+                "Ashfield"
+              ]
+            }
+          ]
+        },
+        "email": {
+          "name": "email",
+          "type": "regex",
+          "rules": [
+            "/[a-z0-9]+@[a-z]+\\.[a-z]{2,3}/g"
+          ]
+        },
+        "phone": {
+          "name": "phone",
+          "type": "regex",
+          "rules": [
+            "/\\+?\\(61\\)|\\(\\+?61\\)|\\+?61|\\(0[1-9]\\)|(0[1-9])?( ?-?[0-9]){7,9}/g"
+          ]
+        },
+        "yes_confirm": {
+          "name": "yes_confirm",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "yes",
+              "texts": [
+                "yes",
+                "Yes",
+                "yeah",
+                "Yeah"
+              ]
+            }
+          ]
+        },
+        "no_confirm": {
+          "name": "no_confirm",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "no",
+              "texts": [
+                "no",
+                "No",
+                "nah",
+                "Nah"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "bye": [
+          {
+            "answer": "Goodbye {{name}}"
+          }
+        ],
+        "welcome": [
+          {
+            "answer": "Hi {{name}}, how can I help you today?\n\n1. Rent a property\n2. Buy a property\n3. Sell a property"
+          }
+        ],
+        "service": [
+          {
+            "answer": "Awesome. May I ask which kind of property is it? ?\n\n1. Apartment \n2. Townhouse\n3. House \n4. Unit"
+          }
+        ],
+        "property": [
+          {
+            "answer": "I'm thrilled to hear that you want to {{service}} a/an {{property}} with us. How many bedrooms are you looking for?"
+          }
+        ],
+        "bedroom": [
+          {
+            "answer": "{{bedroom}} bed. How many bathrooms would you like in this {{property}}?"
+          }
+        ],
+        "bathroom": [
+          {
+            "answer": "How many parking spaces would you like in this {{property}}?"
+          }
+        ],
+        "parking_space": [
+          {
+            "answer": "Select your preferred furnishing type \n1. Furnished \n2. Unfurnished"
+          }
+        ],
+        "furnish": [
+          {
+            "answer": "What is your monthly budget?"
+          }
+        ],
+        "budget": [
+          {
+            "answer": "Please enter the state you're currently residing in."
+          }
+        ],
+        "state": [
+          {
+            "answer": "Great choice but I need to know your preferred suburb as well. Can you give me a name?"
+          }
+        ],
+        "suburb": [
+          {
+            "answer": "Sounds good. May I have your email address?"
+          }
+        ],
+        "email": [
+          {
+            "answer": "{{email}}How about phone number?"
+          }
+        ],
+        "phone": [
+          {
+            "answer": "Thank you for your time {{name}} and I'd like to confirm your information before my colleagues contact you.\n\nName: {{Name}}\nService: {{service}} a {{property}}\nBedrooms: {{bedroom}}\nBathrooms: {{bathroom}}\nParking spaces: {{parking_space}}\nFurnishing: {{furnish}}\nBedrooms: {{bedroom}}\nBudget: ${{budget}}\nState: {{state}}\nSuburb: {{suburb}}\nEmail: {{email}}\nPhone: {{phone}}\n\nAre they correct?"
+          }
+        ],
+        "yes_confirm": [
+          {
+            "answer": "Wonderful. My colleague will call you as soon as they can. Thanks for your time and have a good day!"
+          }
+        ],
+        "no_confirm": [
+          {
+            "answer": "I'm sorry to hear that. Let's start over. Can you please tell me your name?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "welcome": {
+      "name": {
+        "intent": "welcome",
+        "entity": "name",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "service": {
+      "service": {
+        "intent": "service",
+        "entity": "service",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "property": {
+      "property": {
+        "intent": "property",
+        "entity": "property",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "bedroom": {
+      "bedroom": {
+        "intent": "bedroom",
+        "entity": "bedroom",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "bathroom": {
+      "bathroom": {
+        "intent": "bathroom",
+        "entity": "bathroom",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "parking_space": {
+      "parking_space": {
+        "intent": "parking_space",
+        "entity": "parking_space",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "furnish": {
+      "furnish": {
+        "intent": "furnish",
+        "entity": "furnish",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "budget": {
+      "budget": {
+        "intent": "budget",
+        "entity": "budget",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "state": {
+      "state": {
+        "intent": "state",
+        "entity": "state",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "suburb": {
+      "suburb": {
+        "intent": "suburb",
+        "entity": "suburb",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "email": {
+      "email": {
+        "intent": "email",
+        "entity": "email",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "phone": {
+      "phone": {
+        "intent": "phone",
+        "entity": "phone",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "yes_confirm": {
+      "yes_confirm": {
+        "intent": "yes_confirm",
+        "entity": "yes_confirm",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "no_confirm": {
+      "no_confirm": {
+        "intent": "no_confirm",
+        "entity": "no_confirm",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}
