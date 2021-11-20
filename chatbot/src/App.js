@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ChatBotRobot from './Chatbot.compoenent';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ChatBotRobot from "./Chatbot.component";
 
 function App() {
   return (
@@ -10,9 +10,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            REACT + NODE + SOCKETIO CHATBOT DEMO
-        </p>
+          <p>CHATBOT TEAM 3 - VIRTUAL ESTATE AGENT</p>
         </header>
       </div>
     </span>

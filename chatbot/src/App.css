@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.sc-user-input--text {
+  overflow: hidden !important;
+}
+
+.sc-header--img {
+  border-radius: 50%;
+  align-self: center;
+  padding: 10px;
+  max-width: 40px;
+  max-height: 40px;
+  background-color: white;
+}
