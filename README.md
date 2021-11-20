@@ -11,7 +11,7 @@ npm i
 ```
 
 ```
-node bin/www
+npm start
 ```
 
 2.Redirect to the "CHATBOT" folder and execute these commands
