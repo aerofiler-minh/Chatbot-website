@@ -1,8 +1,8 @@
-## REACT CHATBOT + NODE + SOCKETIO
+## WIL PROGRAM ChatBot Team 3
 
-This is a demo of building a chatbot using react, nodeJs and socketIO
+This is a demo of building a real estate chatbot using react, nodeJs, NLP.JS and socketIO
 
-#### How to build the project
+#### How to run the project locally
 
 1. Redirect to the "SERVER" folder and execute these commands:
 
