@@ -65,6 +65,7 @@ class ChatBotRobot extends React.Component {
                     teamName: 'Chatbot',
                     imageUrl: logo
                 }}
+                mute
                 onMessageWasSent={this._onMessageWasSent.bind(this)}
                 messageList={this.state.messageList}
                 showEmoji
