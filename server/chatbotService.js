@@ -420,7 +420,9 @@ const connectWebSocket = (io) => {
           state["service"] = "selling";
         } else {
           let fields = response.intent.replace("_sell", "");
-          state[fields] = response.entities[last].sourceText;
+          response.entities[last] === undefined
+            ? ""
+            : (state[fields] = response.entities[last].sourceText);
         }
       }
       //console.log(response);
