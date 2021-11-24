@@ -3,8 +3,9 @@
 This is a demo of building a real estate chatbot using react, nodeJs, NLP.JS and socketIO
 
 #### How to run the project locally
+1. Install NodeJS and NPM locally
 
-1. Redirect to the "SERVER" folder and execute these commands:
+2. Redirect to the "SERVER" folder and execute these commands:
 
 ```
 npm i
@@ -14,7 +15,7 @@ npm i
 npm start
 ```
 
-2.Redirect to the "CHATBOT" folder and execute these commands
+3.Redirect to the "CHATBOT" folder and execute these commands
 
 ```
 npm i
