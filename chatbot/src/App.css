@@ -48,3 +48,30 @@
   max-height: 40px;
   background-color: white;
 }
+
+.myButton {
+  background-color: #33bdef;
+  border-radius: 28px;
+  border: 1px solid #057fd0;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #5b6178;
+  margin-right: 10px;
+}
+.myButton:hover {
+  background-color: #019ad2;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.status {
+  text-align: center;
+  font-size: 20px;
+}

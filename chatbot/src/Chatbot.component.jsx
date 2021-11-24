@@ -1,9 +1,10 @@
 import React from "react";
 import { Launcher } from 'react-chat-window'
 import io from 'socket.io-client';
+import Dictaphone from "./TTS.Component";
 const logo = require('./logo.png')
 
-class ChatBotRobot extends React.Component {
+class ChatBotAI extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,10 +26,10 @@ class ChatBotRobot extends React.Component {
 
         this.state.socket.on("send-msg-response", async (msg) => {
             this.state.messageList.pop();
+            console.log('EST', this.state.messageList)
             await this.setState({
                 messageList: [...this.state.messageList]
             })
-
             this._sendMessage(msg);
         })
 
@@ -41,7 +42,6 @@ class ChatBotRobot extends React.Component {
 
         this._sendMessage("••••");
         await this.state.socket.emit('new-msg', { msg: message.data.text, room: this.state.room })
-
     }
 
     _sendMessage(text) {
@@ -56,10 +56,26 @@ class ChatBotRobot extends React.Component {
         }
     }
 
-    render() {
+    _onSpeechWasSent(message) {
+        let messageObj = {
+            author: 'me',
+            type: 'text',
+            data: { "text": message }
+        };
+        
+       this.setState({
+            messageList: [...this.state.messageList,  messageObj]
+        }, () => {
+            this._sendMessage("••••");
+            this.state.socket.emit('new-msg', { msg: messageObj.data.text, room: this.state.room })
+        })
+       
+    }
 
+    
+    render() {
         return (
-            <div id="chatbox" className="chatbox">
+        <div id="chatbox" className="chatbox" style={{textAlign: "left"}}>
             <Launcher
                 agentProfile={{
                     teamName: 'Chatbot',
@@ -70,9 +86,10 @@ class ChatBotRobot extends React.Component {
                 messageList={this.state.messageList}
                 showEmoji
             />
+            <Dictaphone handleChange={msg => this._onSpeechWasSent(msg)}/>
         </div>
         );
     }
 }
 
-export default ChatBotRobot;
+export default ChatBotAI;

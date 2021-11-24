@@ -56,44 +56,101 @@ async function trainChatBotIA() {
     );
     manager.addNamedEntityText("property", "house", ["en"], ["house", "House"]);
     manager.addNamedEntityText("property", "unit", ["en"], ["unit", "Unit"]);
-    manager.addNamedEntityText("bedroom", "1 bedroom", ["en"]);
+    manager.addNamedEntityText(
+      "bedroom",
+      "1 bedroom",
+      ["en"],
+      ["one bedroom", "One bedroom", "One Bedroom"]
+    );
     manager.addNamedEntityText(
       "bedroom",
       "2 bedrooms",
       ["en"],
-      ["2 bedroom", "2 Bedrooms", "2 Bedroom"]
+      [
+        "2 bedroom",
+        "2 Bedrooms",
+        "2 Bedroom",
+        "two bedroom",
+        "Two bedroom",
+        "Two Bedroom",
+      ]
     );
     manager.addNamedEntityText(
       "bedroom",
       "3 bedrooms",
       ["en"],
-      ["3 bedroom", "3 Bedrooms", "3 Bedroom"]
+      [
+        "3 bedroom",
+        "3 Bedrooms",
+        "3 Bedroom",
+        "three bedroom",
+        "Three bedroom",
+        "Three Bedroom",
+      ]
     );
-    manager.addNamedEntityText("bathroom", "1 bathroom", ["en"]);
+    manager.addNamedEntityText(
+      "bathroom",
+      "1 bathroom",
+      ["en"],
+      ["one bathroom", "One bathroom", "One Bathroom"]
+    );
     manager.addNamedEntityText(
       "bathroom",
       "2 bathrooms",
       ["en"],
-      ["2 bathroom", "2 Bathrooms", "2 Bathroom"]
+      [
+        "2 bathroom",
+        "2 Bathrooms",
+        "2 Bathroom",
+        "two bathroom",
+        "Two bathroom",
+        "Two Bathroom",
+      ]
     );
     manager.addNamedEntityText(
       "bathroom",
       "3 bathrooms",
       ["en"],
-      ["3 bathroom", "3 Bathrooms", "3 Bathroom"]
+      [
+        "3 bathroom",
+        "3 Bathrooms",
+        "3 Bathroom",
+        "three bathroom",
+        "Three bathroom",
+        "Three Bathroom",
+      ]
     );
-    manager.addNamedEntityText("parking_space", "1 parking space", ["en"]);
+    manager.addNamedEntityText(
+      "parking_space",
+      "1 parking space",
+      ["en"],
+      ["one parking space", "One parking space", "One Parking Space"]
+    );
     manager.addNamedEntityText(
       "parking_space",
       "2 parking spaces",
       ["en"],
-      ["2 parking space", "2 Parking Space", "2 Parking Spaces"]
+      [
+        "2 parking space",
+        "2 Parking Space",
+        "2 Parking Spaces",
+        "two parking space",
+        "Two parking space",
+        "Two Parking Space",
+      ]
     );
     manager.addNamedEntityText(
       "parking_space",
       "3 parking spaces",
       ["en"],
-      ["3 parking space", "3 Parking Space", "3 Parking Spaces"]
+      [
+        "3 parking space",
+        "3 Parking Space",
+        "3 Parking Spaces",
+        "three parking space",
+        "Three parking space",
+        "Three Parking Space",
+      ]
     );
     manager.addNamedEntityText(
       "furnish",
