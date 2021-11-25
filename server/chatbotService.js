@@ -1,9 +1,25 @@
 const { NlpManager, ConversationContext } = require("node-nlp");
+const mysql = require("mysql");
 const fs = require("fs");
-var suburbsJSON = require("./suburbs.json");
+const suburbsJSON = require("./suburbs.json");
 const { resolve } = require("path");
+
 const manager = new NlpManager({ languages: ["en"] });
 const context = new ConversationContext();
+
+// connect to database
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "admin",
+  database: "chatbot",
+});
+
+con.connect(function (err) {
+  if (err) console.log(err);
+  console.log("Database connected!");
+});
+
 // 1 - Train the IA
 async function trainChatBotIA() {
   return new Promise(async (resolve, reject) => {
@@ -60,7 +76,7 @@ async function trainChatBotIA() {
       "bedroom",
       "1 bedroom",
       ["en"],
-      ["one bedroom", "One bedroom", "One Bedroom"]
+      ["1 bedroom", "1 Bedroom", "one bedroom", "One bedroom", "One Bedroom"]
     );
     manager.addNamedEntityText(
       "bedroom",
@@ -92,7 +108,13 @@ async function trainChatBotIA() {
       "bathroom",
       "1 bathroom",
       ["en"],
-      ["one bathroom", "One bathroom", "One Bathroom"]
+      [
+        "1 bathroom",
+        "1 Bathroom",
+        "one bathroom",
+        "One bathroom",
+        "One Bathroom",
+      ]
     );
     manager.addNamedEntityText(
       "bathroom",
@@ -124,7 +146,13 @@ async function trainChatBotIA() {
       "parking_space",
       "1 parking space",
       ["en"],
-      ["one parking space", "One parking space", "One Parking Space"]
+      [
+        "1 parking space",
+        "1 Parking space",
+        "one parking space",
+        "One parking space",
+        "One Parking Space",
+      ]
     );
     manager.addNamedEntityText(
       "parking_space",
@@ -296,13 +324,13 @@ async function trainChatBotIA() {
       "budget",
       "Select your preferred furnishing type \n1. Furnished \n2. Unfurnished"
     );
-    manager.addAnswer("en", "furnish", "How about suburb?");
     manager.addAnswer(
       "en",
-      "suburb",
+      "furnish",
       "Please enter the state you're currently residing in."
     );
-    manager.addAnswer("en", "state", "How many bedrooms are you looking for?");
+    manager.addAnswer("en", "state", "What is your preferred suburb?");
+    manager.addAnswer("en", "suburb", "How many bedrooms are you looking for?");
     manager.addAnswer(
       "en",
       "bedroom",
@@ -395,7 +423,7 @@ async function trainChatBotIA() {
       "What is your expected selling price?"
     );
 
-    manager.addAnswer("en", "price", "What is your residing suburb?");
+    manager.addAnswer("en", "price", "What is your current residing state?");
 
     await manager.train();
     manager.save();
@@ -417,6 +445,9 @@ async function checkSelling(sellObj, property) {
   return new Promise(async (resolve, reject) => {
     let temp = sellObj;
     if (sellObj.intent === "state") {
+      temp.answer = `What is your current residing suburb??`;
+    }
+    if (sellObj.intent === "suburb") {
       temp.answer = `I'd like to know more about this listing. How many bedrooms are there in this ${property}?`;
     }
     if (sellObj.intent === "bedroom") {
@@ -439,12 +470,13 @@ async function checkBuying(buyObj, property) {
     resolve(temp);
   });
 }
+
 const connectWebSocket = (io) => {
   let state = {};
   io.on("connection", function (socket) {
     socket.on("join", (userId) => {
       socket.join(userId);
-      state = { service: "" };
+      state = { service: "service" };
       console.log("New user joined!");
     });
 
@@ -455,7 +487,7 @@ const connectWebSocket = (io) => {
       if (state["service"] === "selling") {
         response = await checkSelling(response, state["property"]);
       }
-      if (state["service"] === "Buying") {
+      if (state["service"].includes("Buy")) {
         response = await checkBuying(response, state["property"]);
       }
 
@@ -468,8 +500,40 @@ const connectWebSocket = (io) => {
       );
 
       // If conversation ends, save to database
-      if (response.utterance === "yes" && response.intent === "yes_confirm") {
-        console.log(state);
+      if (
+        (response.utterance === "Yes" || response.utterance === "yes") &&
+        response.intent === "yes_confirm"
+      ) {
+        var sql = "";
+
+        if (state["service"].includes("Buy")) {
+          sql =
+            `INSERT INTO buy (customer_name, service_type, property, bedrooms, bathrooms, parking_spaces,` +
+            `furnishing, budget, state, suburb, email, phone)` +
+            `VALUES ("${state["name"]}", "${state["service"]}", "${state["property"]}", "${state["bedroom"]}", "${state["bathroom"]}",` +
+            `"${state["parking_space"]}", "${state["furnish"]}", "${state["budget"]}", "${state["state"]}", "${state["suburb"]}",` +
+            `"${state["email"]}", "${state["phone"]}")`;
+        } else if (state["service"].includes("Rent")) {
+          sql =
+            `INSERT INTO rent (customer_name, service_type, property, bedrooms, bathrooms, parking_spaces,` +
+            `furnishing, budget, state, suburb, email, phone)` +
+            `VALUES ("${state["name"]}", "${state["service"]}", "${state["property"]}", "${state["bedroom"]}", "${state["bathroom"]}",` +
+            `"${state["parking_space"]}", "${state["furnish"]}", "${state["budget"]}", "${state["state"]}", "${state["suburb"]}",` +
+            `"${state["email"]}", "${state["phone"]}")`;
+        } else {
+          sql =
+            `INSERT INTO sell (customer_name, service_type, property, bedrooms, bathrooms, parking_spaces,` +
+            `price, state, suburb, email, phone)` +
+            `VALUES ("${state["name"]}", "${state["service"]}", "${state["property"]}", "${state["bedroom"]}", "${state["bathroom"]}",` +
+            `"${state["parking_space"]}",  "${state["price"]}", "${state["state"]}", "${state["suburb"]}",` +
+            `"${state["email"]}", "${state["phone"]}")`;
+        }
+        console.log(sql);
+        // Insert into database
+        con.query(sql, function (err, result) {
+          if (err) console.log(err);
+          else console.log("1 record inserted, ID: " + result.insertId);
+        });
       } else {
         // Save response to state
         let last = response.entities.length - 1;
@@ -477,9 +541,8 @@ const connectWebSocket = (io) => {
           state["service"] = "selling";
         } else {
           let fields = response.intent.replace("_sell", "");
-          response.entities[last] === undefined
-            ? ""
-            : (state[fields] = response.entities[last].sourceText);
+          if (response.entities[last] !== undefined)
+            state[fields] = response.entities[last].sourceText;
         }
       }
       //console.log(response);

@@ -1549,6 +1549,8 @@
             {
               "option": "1 bedroom",
               "texts": [
+                "1 bedroom",
+                "1 Bedroom",
                 "one bedroom",
                 "One bedroom",
                 "One Bedroom"
@@ -1585,6 +1587,8 @@
             {
               "option": "1 bathroom",
               "texts": [
+                "1 bathroom",
+                "1 Bathroom",
                 "one bathroom",
                 "One bathroom",
                 "One Bathroom"
@@ -1621,6 +1625,8 @@
             {
               "option": "1 parking space",
               "texts": [
+                "1 parking space",
+                "1 Parking space",
                 "one parking space",
                 "One parking space",
                 "One Parking Space"
@@ -98632,15 +98638,15 @@
         ],
         "furnish": [
           {
-            "answer": "How about suburb?"
-          }
-        ],
-        "suburb": [
-          {
             "answer": "Please enter the state you're currently residing in."
           }
         ],
         "state": [
+          {
+            "answer": "What is your preferred suburb?"
+          }
+        ],
+        "suburb": [
           {
             "answer": "How many bedrooms are you looking for?"
           }
@@ -98692,7 +98698,7 @@
         ],
         "price": [
           {
-            "answer": "What is your residing suburb?"
+            "answer": "What is your current residing state?"
           }
         ]
       }
