@@ -26,7 +26,6 @@ class ChatBotAI extends React.Component {
 
         this.state.socket.on("send-msg-response", async (msg) => {
             this.state.messageList.pop();
-            console.log('EST', this.state.messageList)
             await this.setState({
                 messageList: [...this.state.messageList]
             })
