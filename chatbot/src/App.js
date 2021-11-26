@@ -1,19 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React from "react";
-import logo from "./logo.svg";
+import Navbar from "./components/Navbar";
 import "./App.css";
-import ChatBotAI from "./Chatbot.component";
+import Home from "./components/pages/Home";
+import AboutUs from "./components/pages/AboutUs";
 
 function App() {
   return (
-    <span>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>CHATBOT TEAM 3 - VIRTUAL ESTATE AGENT</p>
-          <ChatBotAI />
-        </header>
-      </div>
-    </span>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<AboutUs />} />
+      </Routes>
+    </Router>
   );
 }
 
