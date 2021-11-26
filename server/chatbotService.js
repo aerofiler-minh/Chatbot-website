@@ -460,12 +460,12 @@ async function checkSelling(sellObj, property) {
   });
 }
 
-async function checkBuying(buyObj, property) {
+async function checkBuying(buyObj) {
   // Train and save the mode
   return new Promise(async (resolve, reject) => {
     let temp = buyObj;
     if (buyObj.intent === "property") {
-      temp.answer = `I can definitely help you with purchasing a new ${property}. What is your budget?`;
+      temp.answer = `I can definitely help you with purchasing a new ${temp.utterance}. What is your budget?`;
     }
     resolve(temp);
   });
@@ -488,7 +488,7 @@ const connectWebSocket = (io) => {
         response = await checkSelling(response, state["property"]);
       }
       if (state["service"].includes("Buy")) {
-        response = await checkBuying(response, state["property"]);
+        response = await checkBuying(response);
       }
 
       // Send message to the chat room
